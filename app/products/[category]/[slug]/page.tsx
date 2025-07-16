@@ -12,11 +12,7 @@ interface PageProps {
   }
 }
 
-export default function SingleProductPage({ params }: PageProps) {
-  const { category, slug } = params
-
-  // You can use slug/category in a fetch call here in future if needed
-
+export default function SingleProductPage({ params: _params }: PageProps) {
   const productData = {
     name: "HONOR 70 5G (8/256) GB, GREEN GLOBAL",
     price: "₹ 17999",
@@ -30,13 +26,7 @@ export default function SingleProductPage({ params }: PageProps) {
     age: "10-11 Months",
     warranty: "6 Months Warranty",
     imageSrc: "/placeholder.svg?height=500&width=500",
-    thumbnailSrcs: [
-      "/placeholder.svg?height=100&width=100",
-      "/placeholder.svg?height=100&width=100",
-      "/placeholder.svg?height=100&width=100",
-      "/placeholder.svg?height=100&width=100",
-      "/placeholder.svg?height=100&width=100",
-    ],
+    thumbnailSrcs: Array(5).fill("/placeholder.svg?height=100&width=100"),
   }
 
   const relatedProducts = [
@@ -47,7 +37,7 @@ export default function SingleProductPage({ params }: PageProps) {
       oldPrice: "₹ 22000",
       quality: "Mint",
       imageSrc: "/placeholder.svg?height=150&width=150",
-      linkHref: `/products/${category}/${slug}`,
+      linkHref: `/products/honor/honor-70-5g-green-global`,
     },
     {
       name: "REALME NARZO 60X 5G (6/128) GB, NEBULA...",
@@ -70,10 +60,10 @@ export default function SingleProductPage({ params }: PageProps) {
   ]
 
   const productDescription =
-    "The HONOR 70 5G is a powerful smartphone designed for exceptional performance and stunning visuals. It features a vibrant display, advanced camera system, and a long-lasting battery, making it perfect for everyday use and entertainment. With its sleek design and robust features, it offers a premium user experience."
+    "The HONOR 70 5G is a powerful smartphone designed for exceptional performance and stunning visuals. It features a vibrant display, advanced camera system, and a long-lasting battery, making it perfect for everyday use and entertainment."
 
   const productSpecifications =
-    "Display: 6.67-inch OLED, 120Hz refresh rate. Processor: Snapdragon 778G+ 5G. RAM: 8GB. Storage: 256GB. Rear Camera: 54MP (main) + 50MP (ultrawide) + 2MP (depth). Front Camera: 32MP. Battery: 4800mAh with 66W fast charging. OS: Magic UI 6.1 based on Android 12."
+    "Display: 6.67-inch OLED, 120Hz refresh rate. Processor: Snapdragon 778G+ 5G. RAM: 8GB. Storage: 256GB. Rear Camera: 54MP + 50MP + 2MP. Front Camera: 32MP. Battery: 4800mAh with 66W fast charging."
 
   return (
     <div className="min-h-screen bg-gray-100">
