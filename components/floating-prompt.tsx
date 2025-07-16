@@ -17,7 +17,7 @@ export function FloatingPrompt() {
       <div>
         <p className="font-semibold">Have you lost your phone?</p>
         <p className="text-gray-600">
-          Don't worry{" "}
+          Don&rsquo;t worry{" "}
           <Button variant="link" className="p-0 h-auto text-red-600 hover:underline">
             Complain Now
           </Button>

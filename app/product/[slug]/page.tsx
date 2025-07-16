@@ -1,7 +1,13 @@
 import Image from "next/image"
 import { Header } from "@/components/layout/header"
 import { Button } from "@/components/ui/button"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import { Heart, Star } from "lucide-react"
 import { FloatingPrompt } from "@/components/floating-prompt"
 
@@ -39,7 +45,9 @@ export default function ProductPage() {
           {/* Product Details */}
           <div className="grid gap-6">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">REDMI 14C 5G (4/128) GB, STARDUST BLACK</h1>
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                REDMI 14C 5G (4/128) GB, STARDUST BLACK
+              </h1>
               <div className="flex items-center gap-1 mb-4">
                 <div className="flex items-center gap-0.5">
                   <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
@@ -51,13 +59,13 @@ export default function ProductPage() {
                 <span className="text-sm text-gray-600">(120 Reviews)</span>
               </div>
               <div className="flex items-baseline space-x-3 mb-4">
-                <span className="text-4xl font-bold text-red-600">₹ 12999</span>
-                <span className="text-lg text-gray-500 line-through">₹ 19000</span>
+                <span className="text-4xl font-bold text-red-600">₹ 12,999</span>
+                <span className="text-lg text-gray-500 line-through">₹ 19,000</span>
                 <span className="text-lg font-semibold text-green-600">32% OFF</span>
               </div>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Experience lightning-fast performance with the REDMI 14C 5G. Featuring a powerful processor, stunning
-                display, and long-lasting battery, it's designed for seamless multitasking and immersive entertainment.
+                Experience lightning-fast performance with the REDMI 14C 5G. Featuring a powerful processor,
+                stunning display, and long-lasting battery, it&rsquo;s designed for seamless multitasking and immersive entertainment.
               </p>
             </div>
 

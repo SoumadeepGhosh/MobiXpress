@@ -1,12 +1,22 @@
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
-import { FloatingPrompt } from "@/components/floating-prompt" // Updated import path
-import { ProductDetails } from "@/components/product-details" // Updated import path
-import { DescriptionTabs } from "@/components/description-tabs" // Updated import path
-import { ProductGridSection } from "@/components/product-grid-section" // Updated import path
+import { FloatingPrompt } from "@/components/floating-prompt"
+import { ProductDetails } from "@/components/product-details"
+import { DescriptionTabs } from "@/components/description-tabs"
+import { ProductGridSection } from "@/components/product-grid-section"
 
-export default function SingleProductPage({ params }: { params: { category: string; slug: string } }) {
-  // Dummy product data for HONOR 70 5G based on the screenshot
+interface PageProps {
+  params: {
+    category: string
+    slug: string
+  }
+}
+
+export default function SingleProductPage({ params }: PageProps) {
+  const { category, slug } = params
+
+  // You can use slug/category in a fetch call here in future if needed
+
   const productData = {
     name: "HONOR 70 5G (8/256) GB, GREEN GLOBAL",
     price: "₹ 17999",
@@ -15,7 +25,7 @@ export default function SingleProductPage({ params }: { params: { category: stri
     minXpressPrice: "₹ 17699",
     ramRom: ["8/256 GB", "6/128 GB"],
     colors: ["Green Global", "Black", "Emerald Green"],
-    quantity: 5, // Example quantity available
+    quantity: 5,
     quality: "Mint",
     age: "10-11 Months",
     warranty: "6 Months Warranty",
@@ -29,7 +39,6 @@ export default function SingleProductPage({ params }: { params: { category: stri
     ],
   }
 
-  // Dummy data for related products
   const relatedProducts = [
     {
       name: "HONOR 70 5G (8/256) GB, GREEN GLOBAL",
@@ -38,7 +47,7 @@ export default function SingleProductPage({ params }: { params: { category: stri
       oldPrice: "₹ 22000",
       quality: "Mint",
       imageSrc: "/placeholder.svg?height=150&width=150",
-      linkHref: `/products/honor/honor-70-5g-green-global`,
+      linkHref: `/products/${category}/${slug}`,
     },
     {
       name: "REALME NARZO 60X 5G (6/128) GB, NEBULA...",
@@ -62,6 +71,7 @@ export default function SingleProductPage({ params }: { params: { category: stri
 
   const productDescription =
     "The HONOR 70 5G is a powerful smartphone designed for exceptional performance and stunning visuals. It features a vibrant display, advanced camera system, and a long-lasting battery, making it perfect for everyday use and entertainment. With its sleek design and robust features, it offers a premium user experience."
+
   const productSpecifications =
     "Display: 6.67-inch OLED, 120Hz refresh rate. Processor: Snapdragon 778G+ 5G. RAM: 8GB. Storage: 256GB. Rear Camera: 54MP (main) + 50MP (ultrawide) + 2MP (depth). Front Camera: 32MP. Battery: 4800mAh with 66W fast charging. OS: Magic UI 6.1 based on Android 12."
 

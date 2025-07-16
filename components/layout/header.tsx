@@ -3,7 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Search, LayoutGrid, Bell, User, Flame, ShoppingCart, Heart, Menu, X } from "lucide-react"
+import { Search,  Bell, User, Flame, ShoppingCart, Heart, Menu, X } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { useState } from "react"
 
