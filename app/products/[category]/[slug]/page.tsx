@@ -6,13 +6,16 @@ import { DescriptionTabs } from "@/components/description-tabs"
 import { ProductGridSection } from "@/components/product-grid-section"
 
 interface PageProps {
-  params: {
+  params: Promise<{
     category: string
     slug: string
-  }
+  }>
 }
 
-export default function SingleProductPage({ params: _params }: PageProps) {
+export default async function SingleProductPage({ params }: PageProps) {
+  // Await the params since they're now a Promise in Next.js 15
+  const { category, slug } = await params
+
   const productData = {
     name: "HONOR 70 5G (8/256) GB, GREEN GLOBAL",
     price: "₹ 17999",
@@ -64,6 +67,9 @@ export default function SingleProductPage({ params: _params }: PageProps) {
 
   const productSpecifications =
     "Display: 6.67-inch OLED, 120Hz refresh rate. Processor: Snapdragon 778G+ 5G. RAM: 8GB. Storage: 256GB. Rear Camera: 54MP + 50MP + 2MP. Front Camera: 32MP. Battery: 4800mAh with 66W fast charging."
+
+  // You can now use category and slug variables if needed
+  // console.log(`Category: ${category}, Slug: ${slug}`)
 
   return (
     <div className="min-h-screen bg-gray-100">
