@@ -1,5 +1,9 @@
+"use client"
+
 import Image from "next/image"
+import { useState } from "react"
 import { Header } from "@/components/layout/header"
+import { Footer } from "@/components/layout/footer"
 import { Button } from "@/components/ui/button"
 import {
   Select,
@@ -26,6 +30,7 @@ export default function ProductPage() {
                 height={500}
                 alt="Product Main Image"
                 className="rounded-lg object-cover aspect-square border"
+                priority
               />
             </div>
             <div className="flex space-x-2 overflow-x-auto pb-2">
@@ -114,11 +119,11 @@ export default function ProductPage() {
                     <SelectValue placeholder="1" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="1">1</SelectItem>
-                    <SelectItem value="2">2</SelectItem>
-                    <SelectItem value="3">3</SelectItem>
-                    <SelectItem value="4">4</SelectItem>
-                    <SelectItem value="5">5</SelectItem>
+                    {[1, 2, 3, 4, 5].map((qty) => (
+                      <SelectItem key={qty} value={qty.toString()}>
+                        {qty}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
               </div>
@@ -132,7 +137,7 @@ export default function ProductPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="flex-1 border-red-600 text-red-600 hover:bg-red-50 bg-transparent"
+                className="flex-1 border-red-600 text-red-600 hover:bg-red-50"
               >
                 <Heart className="w-5 h-5 mr-2" />
                 Add to Wishlist
@@ -142,6 +147,7 @@ export default function ProductPage() {
         </div>
       </main>
       <FloatingPrompt />
+      <Footer />
     </div>
   )
 }

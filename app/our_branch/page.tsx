@@ -1,3 +1,4 @@
+// app/our_branch/page.tsx
 'use client'
 import React, { useState } from 'react';
 import Image from 'next/image';
@@ -155,9 +156,9 @@ const BranchLocator = () => {
                     fill
                     className="object-cover opacity-60"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    onError={(e) => {
+                    onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => { // Corrected type here
                       // Fallback to gradient background if image fails to load
-                      e.target.style.display = 'none';
+                      (e.target as HTMLImageElement).style.display = 'none'; // Type assertion here
                     }}
                   />
                 </div>
